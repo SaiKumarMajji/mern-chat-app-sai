@@ -4,8 +4,8 @@ const Session = require('../models/Session');
 const cookieName = 'relay_session';
 const cookieOptions = {
   httpOnly: true,
-  sameSite: 'lax',
-  secure: process.env.NODE_ENV === 'production',
+  sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax', 
+  secure: process.env.NODE_ENV === 'production', 
   path: '/',
 };
 
